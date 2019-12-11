@@ -8,19 +8,14 @@
 //   palindrome("abcdefg") === false
 
 function reverse(str) {
-  // turn string into an array
-  const arr = str.split("");
-  // call reverse method on the array
-  arr.reverse();
-  // join the array back into a string
-  arr.join("");
-  // return the result
-  return arr;
+  // Split the string with the split method
+  // and reduce it down to a single string
+  return str.split("").reduce((reversed, character) => {
+    return character + reversed;
+  }, "");
 }
 
-function reverse1(str) {
-  return str
-    .split("")
-    .reverse()
-    .join("");
+// code clean up with es6
+function reverse(str) {
+  return str.split("").reduce((rev, char) => char + rev, "");
 }

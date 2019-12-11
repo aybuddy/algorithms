@@ -7,20 +7,11 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function reverse(str) {
-  // turn string into an array
-  const arr = str.split("");
-  // call reverse method on the array
-  arr.reverse();
-  // join the array back into a string
-  arr.join("");
-  // return the result
-  return arr;
-}
-
-function reverse1(str) {
-  return str
+function palindrome(str) {
+  const reversed = str
     .split("")
     .reverse()
     .join("");
+  // if (reversedString === str) return true;
+  return str === reversed;
 }

@@ -17,8 +17,31 @@
 //       '### '
 //       '####'
 
-// function steps(n) { }
-function steps(n) { }
+function steps(n, row = 0, stair = ''){
+	if (n === row) {
+		return;
+	}
+	if (n === stair.length) {
+		console.log(stair);
+		return steps(n, row + 1);
+	}
+
+	if (stair.length <= row) {
+		stair += '#';
+	} else {
+		stair += ' ';
+	}
+	steps(n, row, stair);
+
+	// consolidated version using ternary operator
+	// const add = stair.length <= row ? '#' : ' ';
+	// steps(n, row, stair + add);
+}
+
+// If (row === n) then we have hit the end of our problem
+// If the 'stair' string has a length === n, then we are at the end of the row
+// IF the length of the stair string is less than or equal to the row number
+// we're working on, we add a '#', otherwise add a space.
 
 module.exports = steps;
 
